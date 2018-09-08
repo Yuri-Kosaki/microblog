@@ -1,5 +1,5 @@
 __pycache__
 staticfiles
-dev.py
+local-setting.py
 db.sqlite3
 *.py[co]
