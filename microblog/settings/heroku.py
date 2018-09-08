@@ -2,7 +2,11 @@ from .common import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+STATIC_ROOT = 'staticfiles'
 
 DATABASES = {
     'default': {
@@ -17,3 +21,8 @@ DATABASES = {
         }
     }
 }
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
